@@ -3,7 +3,7 @@
     <div class="form-group">
       <label for="">Hero Name</label>
       <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" v-model="newHeroName">
-      <button type="button" class="btn btn-primary mt-2" @click="addHero()">Add</button>
+      <button type="button" class="btn btn-primary mt-2" @click="addHero()" :disabled="newHeroName === ''">Add</button>
     </div>
      <ul class="list-group mt-4">
           <li class="list-group-item" v-for="(hero, index) in heroes"  :key="index">{{hero}}</li>
