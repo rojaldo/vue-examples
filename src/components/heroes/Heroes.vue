@@ -1,31 +1,26 @@
 <template>
-<div class="container">
-    <div class="form-group">
-      <label for="">Hero Name</label>
-      <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" v-model="newHeroName">
-      <button type="button" class="btn btn-primary mt-2" @click="addHero()" :disabled="newHeroName === ''">Add</button>
-    </div>
-     <ul class="list-group mt-4">
-          <li class="list-group-item" v-for="(hero, index) in heroes"  :key="index">{{hero}}</li>
-      </ul>
-</div>
+  <div class="container">
+      <HeroForm @add-hero="addHero($event)"></HeroForm>
+    <HeroesList :heroesList="heroes" />
+  </div>
 </template>
 
 <script>
+import HeroesList from "./HeroesList.vue";
+import HeroForm from "./HeroForm.vue";
 export default {
-    name: 'Heroes',
-    data() {
-        return {
-            heroes: ['Batman', 'Superman', 'Spiderman'],
-            newHeroName: ''
-        }
+  name: "Heroes",
+  data() {
+    return {
+      heroes: ["Batman", "Superman", "Spiderman"],
+    };
+  },
+  methods: {
+    addHero(value) {
+      this.heroes.push(value);
     },
-    methods: {
-        addHero() {
-            this.heroes.push(this.newHeroName);
-            this.newHeroName = '';
-        }
-    },
+  },
+  components: { HeroesList, HeroForm },
 };
 </script>
 
