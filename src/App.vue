@@ -6,7 +6,7 @@
       <template #panel-foo>
         <Apod></Apod>
       </template>
-      <template #tab-2> Heroes </template>
+      <!-- <template #tab-2> Heroes </template>
       <template #panel-2>
         <Heroes></Heroes>
       </template>
@@ -15,7 +15,7 @@
         <Calculator></Calculator>
       </template>
       <template #tab-bar> Tab Bar </template>
-      <template #panel-bar> Panel Bar </template>
+      <template #panel-bar> Panel Bar </template>  -->
     </Tabs>
   </div>
 </template>
@@ -25,16 +25,16 @@
 import "agnostic-vue/dist/common.min.css";
 import "agnostic-vue/dist/index.css";
 import { Tabs } from "agnostic-vue";
-import Calculator from "./components/calculator/Calculator.vue";
-import Heroes from "./components/heroes/Heroes.vue";
+// import Calculator from "./components/calculator/Calculator.vue";
+// import Heroes from "./components/heroes/Heroes.vue";
 import Apod from "./components/apod/Apod.vue";
 
 export default {
   name: "App",
   components: {
     Tabs,
-    Calculator,
-    Heroes,
+    // Calculator,
+    // Heroes,
     Apod,
   },
   data() {
