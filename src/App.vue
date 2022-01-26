@@ -10,10 +10,9 @@
       <template #panel-1>
         <Calculator></Calculator>
       </template>
-      <template #tab-foo> Tab Foo </template>
+      <template #tab-foo> Apod </template>
       <template #panel-foo>
-        Panel Foo content (no padding or margins so consumer can control desired
-        gutters)
+        
       </template>
       <template #tab-bar> Tab Bar </template>
       <template #panel-bar> Panel Bar </template>
