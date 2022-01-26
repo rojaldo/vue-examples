@@ -2,6 +2,10 @@
   <h2>Tabs</h2>
   <div class="mbs24 mbe16">
     <Tabs>
+      <template #tab-foo> Apod </template>
+      <template #panel-foo>
+        <Apod></Apod>
+      </template>
       <template #tab-2> Heroes </template>
       <template #panel-2>
         <Heroes></Heroes>
@@ -9,10 +13,6 @@
       <template #tab-1> Calculator </template>
       <template #panel-1>
         <Calculator></Calculator>
-      </template>
-      <template #tab-foo> Apod </template>
-      <template #panel-foo>
-        
       </template>
       <template #tab-bar> Tab Bar </template>
       <template #panel-bar> Panel Bar </template>
@@ -27,6 +27,7 @@ import "agnostic-vue/dist/index.css";
 import { Tabs } from "agnostic-vue";
 import Calculator from "./components/calculator/Calculator.vue";
 import Heroes from "./components/heroes/Heroes.vue";
+import Apod from "./components/apod/Apod.vue";
 
 export default {
   name: "App",
@@ -34,6 +35,7 @@ export default {
     Tabs,
     Calculator,
     Heroes,
+    Apod,
   },
   data() {
     return {};
