@@ -1,6 +1,6 @@
 <template>
   <div class="container my-3">
-    <Slider v-model="range" @update="handleRange()" :lazy="false" />
+    <Slider v-model="myRange" @update="handleRange()" :lazy="false" />
   </div>
 </template>
 
@@ -11,12 +11,13 @@ export default {
   name: "BeerSlider",
   data() {
     return {
-      range: [4, 6],
+      myRange: this.range,
     };
   },
+  props:["range"],
   methods: {
     handleRange() {
-      this.$emit("update-range", this.range);
+      this.$emit("update-range", this.myRange);
     },
   },
   emits: ["update-range"],
