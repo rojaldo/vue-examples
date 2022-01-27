@@ -1,44 +1,31 @@
 <template>
-  <h2>Tabs</h2>
-  <div class="mbs24 mbe16">
-    <Tabs>
-      <template #tab-foo> Apod </template>
-      <template #panel-foo>
-        <Apod></Apod>
-      </template>
-      <!-- <template #tab-2> Heroes </template>
-      <template #panel-2>
-        <Heroes></Heroes>
-      </template>
-      <template #tab-1> Calculator </template>
-      <template #panel-1>
-        <Calculator></Calculator>
-      </template>
-      <template #tab-bar> Tab Bar </template>
-      <template #panel-bar> Panel Bar </template>  -->
-    </Tabs>
+  <div id="nav">
+    <router-link to="/beers">Beers</router-link> |
+    <router-link to="/calculator">Calculator</router-link> |
+    <router-link to="/heroes">Heroes</router-link> |
+    <router-link to="/apod">Apod</router-link>
   </div>
+  <router-view/>
 </template>
 
-<script>
-// Import AgnosticUI global common & component CSS
-import "agnostic-vue/dist/common.min.css";
-import "agnostic-vue/dist/index.css";
-import { Tabs } from "agnostic-vue";
-// import Calculator from "./components/calculator/Calculator.vue";
-// import Heroes from "./components/heroes/Heroes.vue";
-import Apod from "./components/apod/Apod.vue";
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+}
 
-export default {
-  name: "App",
-  components: {
-    Tabs,
-    // Calculator,
-    // Heroes,
-    Apod,
-  },
-  data() {
-    return {};
-  },
-};
-</script>
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
+</style>
