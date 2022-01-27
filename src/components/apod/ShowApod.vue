@@ -39,6 +39,13 @@ export default {
       error: false,
     };
   },
+  watch : {
+    date : function(newDate, oldDate) {
+      if(newDate !== oldDate) {
+        this.getApod(newDate);
+      }
+    }
+  },
   methods: {
     getApod(date) {
       let url =
@@ -57,15 +64,7 @@ export default {
           this.error = true;
         });
     },
-  },
-  created() {
-    this.getApod();
-  },
-  updated() {
-    if (this.date !== this.apodData.date || this.error) {
-      this.getApod(this.date);
-    }
-  },
+  }
 };
 </script>
 

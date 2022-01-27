@@ -15,7 +15,7 @@ export default {
   data() {
     return {
       message: "Hello World!",
-      selectedDate: new Date().toISOString().slice(0, 10),
+      selectedDate: '',
     };
   },
   components: {
@@ -29,6 +29,7 @@ export default {
   },
   mounted() {
     console.log("mounted");
+    this.selectedDate = new Date().toISOString().slice(0, 10);
   },
   beforeUpdate() {
     console.log("beforeUpdate");
