@@ -15,9 +15,23 @@ export default createStore({
     setRange(state, range) {
       console.log('setRange', range);
       state.beers.range = range
+    },
+    setList(state, list) {
+      console.log('setList', list);
+      state.beers.list = list
     }
   },
   actions: {
+    async fetchBeers({ commit }) {
+      if(this.getters.getList.length > 0) {
+        console.log('Fetching beers from store');
+      }else {
+        console.log('Fetching beers from API');
+        const response = await fetch(`https://api.punkapi.com/v2/beers`)
+        const data = await response.json()
+        commit('setList', data)  
+      }
+    }
 
   },
   modules: {

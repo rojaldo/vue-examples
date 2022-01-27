@@ -1,12 +1,12 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Beers from '../components/beers/Beers.vue'
+import BeersContainer from '../components/beers/BeersContainer.vue'
 
 const routes = [
   { path:'/', redirect: '/beers'},
   {
     path: '/beers',
     name: 'Beers',
-    component: Beers
+    component: BeersContainer
   },
   {
     path: '/calculator',

@@ -8,23 +8,22 @@
 <script>
 import BeersList from "./BeersList.vue";
 import BeerSlider from "./BeerSlider.vue";
-import { useStore } from "vuex";
 
 export default {
-  setup() {
-    return {
-      store: useStore(),
-    };
-  },
   name: "Beers",
-  data() {
-    return {
-      beers: [],
-      range: this.store.getters.getRange,
-    };
+  props: {
+    beers: {
+      type: Array,
+      required: true,
+    },
+    range: {
+      type: Array,
+      required: true,
+    },
   },
   created() {
-    this.getBeers();
+    // this.getBeers();
+    
   },
   components: {
     BeersList,
@@ -42,23 +41,11 @@ export default {
     },
   },
   methods: {
-    getBeers() {
-      if (this.beers.length === 0) {
-        fetch("https://api.punkapi.com/v2/beers")
-          .then((response) => response.json())
-          .then((data) => {
-            this.beers = data;
-            console.log("getBeers");
-          });
-      }else {
-        console.log("Fetching beers from cache");
-      }
-    },
-    handleRange(value) {
-      this.range = value;
-      this.store.commit("setRange", value);
+    handleRange(range) {
+      this.$emit("update-range", range);
     },
   },
+  emits: ["update-range"],
 };
 </script>
 
