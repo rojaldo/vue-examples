@@ -37,12 +37,22 @@ export default {
   name: "HeroForm",
   data() {
     return {
-      newHeroName: "",
-      newHeroDescritpion: "",
+      newHeroName: this.hero.name,
+      newHeroDescritpion: this.hero.description,
     };
+  },
+  props: {
+    hero: {
+      type: Object,
+      required: false,
+    },
+  },
+  unmounted() {
+    this.$emit("update-hero", new Hero(this.newHeroName, this.newHeroDescritpion));
   },
   methods: {
     addHero() {
+      this.$emit("update-hero", new Hero(this.newHeroName, this.newHeroDescritpion));
       this.$emit(
         "add-hero",
         new Hero(this.newHeroName, this.newHeroDescritpion)
@@ -51,7 +61,7 @@ export default {
       this.newHeroDescritpion = "";
     },
   },
-  emits: ["add-hero"],
+  emits: ["add-hero","update-hero"],
 };
 </script>
 
