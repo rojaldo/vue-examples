@@ -23,8 +23,9 @@ export default {
     };
   },
   created() {
-    this.store.dispatch("fetchBeers");
-
+    this.store.dispatch("fetchBeers").then(() => {
+      this.beers = this.store.getters.getList;
+    });
   },
   methods: {
     handleRange(range) {

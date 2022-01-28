@@ -22,14 +22,14 @@ export default createStore({
     }
   },
   actions: {
-    async fetchBeers({ commit }) {
+    async fetchBeers(context) {
       if(this.getters.getList.length > 0) {
         console.log('Fetching beers from store');
       }else {
         console.log('Fetching beers from API');
         const response = await fetch(`https://api.punkapi.com/v2/beers`)
         const data = await response.json()
-        commit('setList', data)  
+        context.commit('setList', data)  
       }
     }
 
