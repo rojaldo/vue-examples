@@ -2,7 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import BeersContainer from '../components/beers/BeersContainer.vue'
 
 const routes = [
-  { path:'/', redirect: '/apod'},
+  { path:'/', redirect: '/beers'},
   {
     path: '/beers',
     name: 'Beers',
