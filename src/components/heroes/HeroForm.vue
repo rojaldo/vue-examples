@@ -5,7 +5,7 @@
       type="text"
       class="form-control"
       name=""
-      id=""
+      id="nameInput"
       aria-describedby="helpId"
       placeholder=""
       v-model="newHeroName"
@@ -15,7 +15,7 @@
       type="text"
       class="form-control"
       name=""
-      id=""
+      id="descriptionInput"
       aria-describedby="helpId"
       placeholder=""
       v-model="newHeroDescritpion"
@@ -23,6 +23,7 @@
     <button
       type="button"
       class="btn btn-primary mt-2"
+      id="addButton"
       @click="addHero()"
       :disabled="newHeroName === ''"
     >

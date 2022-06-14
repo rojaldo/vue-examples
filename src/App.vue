@@ -1,9 +1,9 @@
 <template>
   <div id="nav">
-    <router-link to="/beers">Beers</router-link> |
-    <router-link to="/calculator">Calculator</router-link> |
-    <router-link to="/heroes">Heroes</router-link> |
-    <router-link to="/apod">Apod</router-link>
+    <router-link to="/beers" id="beersLink" >Beers</router-link> |
+    <router-link to="/calculator" id="calculatorLink">Calculator</router-link> |
+    <router-link to="/heroes" id="heroesLink" >Heroes</router-link> |
+    <router-link to="/apod" id="apodLink">Apod</router-link>
   </div>
   <router-view/>
 </template>
